@@ -1,0 +1,21 @@
+<h1>Heros Marvel</h1>
+<br>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let Heros of heros; let i = index">
+        <img class="card-img-top" [src]="Heros.img" [alt]="Heros.name">
+        <div class="card-body">
+            <h5 class="card-title"> {{ Heros.nombre }}  </h5>
+            <p class="card-text"> {{ Heros.bio }} </p>
+            <p class="card-text"><small class="text-muted"> {{ Heros.aparicion }} </small></p>
+            <button 
+                (click)="GoHero(i)"
+                class="btn btn-outline-success btn-block"
+            >
+                Ver mas
+            </button>
+            <!-- Funciona y manda al detalle -->
+            <!-- <a [routerLink]="['/hero-detail',i]" class="btn btn-outline-success" >Ver mas...</a> -->
+        </div>
+    </div>
+</div>
